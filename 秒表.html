@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>秒表</title>
+        <style>
+            div{
+                font-size: 39px;
+                text-align: center;
+            }
+            #time{
+                color: aquamarine;
+            }
+            #button{
+                font-size: medium;
+                width: 200px;
+                height: 50px;
+                border-radius: 30px;
+            }
+        </style>
+        <script>
+            var t = 0 ; click = 0 ;
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <button id="button" onclick="update()">开始计时</button>
+            <p>Time passed:   <b id="time">0</b>s</p>
+        </div>
+        <script>
+            var ct= click , run=null ;
+            function update(){
+                ct++;
+                if(ct%2==0){
+                    clearInterval(run);push.innerHTML='continue';
+                }else{
+                    run=setInterval("timer()",1000);push.innerHTML='stop';
+                }    
+            }
+            function timer(){
+                t++
+                time.innerHTML=t;
+            }
+        </script>
+    </body>
+</html>
